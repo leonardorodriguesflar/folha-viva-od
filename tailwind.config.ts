@@ -44,6 +44,14 @@ export default {
 					DEFAULT: 'hsl(var(--accent))',
 					foreground: 'hsl(var(--accent-foreground))'
 				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))'
+				},
+				warning: {
+					DEFAULT: 'hsl(var(--warning))',
+					foreground: 'hsl(var(--warning-foreground))'
+				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
 					foreground: 'hsl(var(--popover-foreground))'
@@ -61,7 +69,27 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				odebrecht: {
+					blue: 'hsl(var(--odebrecht-blue))',
+					'light-green': 'hsl(var(--odebrecht-light-green))',
+					'dark-green': 'hsl(var(--odebrecht-dark-green))',
+					'dark-blue': 'hsl(var(--odebrecht-dark-blue))',
+					orange: 'hsl(var(--odebrecht-orange))',
+					pink: 'hsl(var(--odebrecht-pink))',
+					teal: 'hsl(var(--odebrecht-teal))',
+					'light-blue': 'hsl(var(--odebrecht-light-blue))'
+				},
+				status: {
+					active: 'hsl(var(--status-active))',
+					progress: 'hsl(var(--status-progress))',
+					complete: 'hsl(var(--status-complete))',
+					pending: 'hsl(var(--status-pending))'
 				}
+			},
+			fontFamily: {
+				sans: ['Ubuntu', 'system-ui', 'sans-serif'],
+				ubuntu: ['Ubuntu', 'system-ui', 'sans-serif']
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

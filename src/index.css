@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,35 +10,64 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Odebrecht Primary Colors */
+    --odebrecht-blue: 200 100% 43.1%; /* #009CDE */
+    --odebrecht-light-green: 72 56% 50.8%; /* #A9C23F */
+    --odebrecht-dark-green: 158 100% 25.7%; /* #00843D */
+    --odebrecht-dark-blue: 204 29% 34.3%; /* #3F5B70 */
+    
+    /* Odebrecht Secondary Colors */
+    --odebrecht-orange: 38 100% 50%; /* #FFA300 */
+    --odebrecht-pink: 337 100% 44.1%; /* #E0004D */
+    --odebrecht-teal: 195 100% 24.9%; /* #00677F */
+    --odebrecht-light-blue: 194 100% 40.2%; /* #00A9CE */
+    
+    /* App Theme Colors */
+    --background: 0 0% 98%;
+    --foreground: 204 29% 34.3%; /* odebrecht-dark-blue for text */
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 204 29% 34.3%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 204 29% 34.3%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 200 100% 43.1%; /* Odebrecht Blue */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 204 29% 34.3%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 204 29% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 72 56% 50.8%; /* Odebrecht Light Green */
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --success: 158 100% 25.7%; /* Odebrecht Dark Green */
+    --success-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --warning: 38 100% 50%; /* Odebrecht Orange */
+    --warning-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    --destructive: 337 100% 44.1%; /* Odebrecht Pink */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 100%;
+    --ring: 200 100% 43.1%;
+
+    --radius: 0.75rem;
+    
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    
+    /* Industrial app specific */
+    --status-active: 72 56% 50.8%; /* Light Green */
+    --status-progress: 200 100% 43.1%; /* Blue */
+    --status-complete: 158 100% 25.7%; /* Dark Green */
+    --status-pending: 38 100% 50%; /* Orange */
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +87,46 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Odebrecht Dark Theme */
+    --background: 204 29% 8%; /* Very dark blue */
+    --foreground: 0 0% 95%;
+    
+    --card: 204 29% 12%;
+    --card-foreground: 0 0% 95%;
+    
+    --popover: 204 29% 12%;
+    --popover-foreground: 0 0% 95%;
+    
+    --primary: 200 100% 43.1%; /* Keep Odebrecht Blue */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 204 29% 18%;
+    --secondary-foreground: 0 0% 95%;
+    
+    --muted: 204 29% 15%;
+    --muted-foreground: 204 10% 65%;
+    
+    --accent: 72 56% 50.8%; /* Keep Odebrecht Light Green */
+    --accent-foreground: 0 0% 100%;
+    
+    --success: 158 100% 25.7%; /* Keep Odebrecht Dark Green */
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 100% 50%; /* Keep Odebrecht Orange */
+    --warning-foreground: 0 0% 100%;
+    
+    --destructive: 337 100% 44.1%; /* Keep Odebrecht Pink */
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 204 29% 20%;
+    --input: 204 29% 15%;
+    --ring: 200 100% 43.1%;
+    
+    /* Status colors remain the same for consistency */
+    --status-active: 72 56% 50.8%;
+    --status-progress: 200 100% 43.1%;
+    --status-complete: 158 100% 25.7%;
+    --status-pending: 38 100% 50%;
   }
 }
 
