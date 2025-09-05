@@ -45,9 +45,7 @@ interface CommissioningItem {
 }
 
 export const SisEPCApp = () => {
-  console.log('SisEPCApp rendering...');
   const [currentScreen, setCurrentScreen] = useState<Screen>('login');
-  console.log('Current screen:', currentScreen);
   const [selectedContract, setSelectedContract] = useState<Contract | null>(null);
   const [selectedModule, setSelectedModule] = useState<string>('');
   const [selectedDiscipline, setSelectedDiscipline] = useState<string>('');
@@ -123,10 +121,8 @@ export const SisEPCApp = () => {
   };
 
   const renderScreen = () => {
-    console.log('renderScreen called, currentScreen:', currentScreen);
     switch (currentScreen) {
       case 'login':
-        console.log('Rendering login screen');
         return <LoginScreen onLogin={handleLogin} />;
       
       case 'contracts':

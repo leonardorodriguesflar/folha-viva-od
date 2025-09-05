@@ -10,7 +10,6 @@ interface LoginScreenProps {
 }
 
 export const LoginScreen = ({ onLogin }: LoginScreenProps) => {
-  console.log('LoginScreen rendering...');
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     usuario: '',
